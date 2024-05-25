@@ -1,7 +1,7 @@
 name: Stackspot workflow dispatch
 run-name: ${{ inputs.correlation_id }}
 on: 
-  workflow_call:
+  workflow_dispatch:
     inputs:
       correlation_id:
         description: Correlation id
@@ -21,7 +21,7 @@ on:
         type: string
 jobs:
   redirect:
-    uses: fernandochagaszup/workflow-stk-edp/.github/workflows/middle-flow.yml@main
+    uses: fernandochagaszup/workflow-stk-edp/.github/workflows/workflow_reutilizavel.yml@main
     with:
       api_inputs: ${{ github.event.inputs.api_inputs }}
       workflow_name: ${{ github.event.inputs.workflow_name }}
