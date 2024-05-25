@@ -1,20 +1,24 @@
 name: Stackspot workflow dispatch
 run-name: ${{ inputs.correlation_id }}
 on: 
-  workflow_dispatch:
+  workflow_call:
     inputs:
       correlation_id:
         description: Correlation id
         required: true
+        type: string
       workflow_name:
         description: Workflow path
         required: true
+        type: string
       secrets:
         description: Secrets info (json)
         required: true
+        type: string
       api_inputs:
         description: Workflow inputs (json)
         required: true
+        type: string
 jobs:
   redirect:
     uses: fernandochagaszup/workflow-stk-edp/.github/workflows/middle-flow.yml@main
