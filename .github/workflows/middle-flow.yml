@@ -6,19 +6,15 @@ on:
       correlation_id:
         description: Correlation id
         required: true
-        type: string
       workflow_name:
         description: Workflow path
         required: true
-        type: string
       secrets:
         description: Secrets info (json)
         required: true
-        type: string
       api_inputs:
         description: Workflow inputs (json)
         required: true
-        type: string
 jobs:
   redirect:
     uses: fernandochagaszup/workflow-stk-edp/.github/workflows/workflow_reutilizavel.yml@main
@@ -26,14 +22,5 @@ jobs:
       api_inputs: ${{ github.event.inputs.api_inputs }}
       workflow_name: ${{ github.event.inputs.workflow_name }}
       correlation_id: ${{ github.event.inputs.correlation_id }}
-      config: "{
-        \"runner\": \"ubuntu-latest\",
-        \"github_org\": \"${{ github.repository_owner }}\",
-        \"debug\": false,
-        \"stk\": \"stk\",
-        \"origin_repository\": \"fernandochagaszup/workflow-stk-edp\",
-        \"origin_branch\": \"main\",
-        \"default_branch\": \"main\"
-        }"
     secrets:
       secrets: ${{ github.event.inputs.secrets }}

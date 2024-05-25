@@ -11,14 +11,6 @@ on:
         description: Workflow path
         required: true
         type: string
-      secrets:
-        description: Secrets info (json)
-        required: true
-        type: string
-      api_inputs:
-        description: Workflow inputs (json)
-        required: true
-        type: string
 jobs:
   example_job:
     runs-on: ubuntu-latest
@@ -27,6 +19,4 @@ jobs:
         run: |
           echo "Correlation ID: ${{ inputs.correlation_id }}"
           echo "Workflow Name: ${{ inputs.workflow_name }}"
-          echo "Secrets: ${{ inputs.secrets }}"
-          echo "API Inputs: ${{ inputs.api_inputs }}"
           echo "This is an example step."
