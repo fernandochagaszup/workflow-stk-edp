@@ -19,7 +19,6 @@ jobs:
   redirect:
     uses: fernandochagaszup/workflow-stk-edp/.github/workflows/workflow_reutilizavel.yml@main
     with:
-      api_inputs: ${{ github.event.inputs.api_inputs }}
       workflow_name: ${{ github.event.inputs.workflow_name }}
       correlation_id: ${{ github.event.inputs.correlation_id }}
     secrets:
