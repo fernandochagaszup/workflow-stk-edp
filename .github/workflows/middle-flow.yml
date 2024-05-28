@@ -21,5 +21,3 @@ jobs:
     with:
       workflow_name: ${{ github.event.inputs.workflow_name }}
       correlation_id: ${{ github.event.inputs.correlation_id }}
-    secrets:
-      secrets: ${{ secrets }}
