@@ -1,5 +1,5 @@
 name: Stackspot reusable workflow
-run-name: ${{ inputs.correlation_id }}
+run-name: RW-${{ inputs.correlation_id }}
 on: 
   workflow_call:
     inputs:
